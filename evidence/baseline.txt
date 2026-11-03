@@ -1,0 +1,27 @@
+﻿=== 120 ===
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:233: duration > 120 ? "text-rose-600" : "text-slate-700"
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:237: {duration > 120 && " (exceeds 120 min max)"}
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:332: Max booking duration: 120 minutes. This tool only checks
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:68: // AC2: Duration must not exceed 120 minutes (exactly 120 is allowed)
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:69: if (end - start > 120) {
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:71: "Booking duration cannot exceed 120 minutes. Please choose a shorter time range."
+=== 1440 ===
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:174: max={1440}
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:183: {startValid && startNum >= 0 && startNum <= 1440 && (
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:207: max={1440}
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx:216: {endValid && endNum >= 0 && endNum <= 1440 && (
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\Timeline.tsx:13: const HOUR_MARKS_WIDE = [0, 360, 720, 1080, 1440];
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\Timeline.tsx:29: const toPercent = (minutes: number) => (minutes / 1440) * 100;
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\Timeline.tsx:37: proposedEnd <= 1440 &&
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:18: if (minutes === 1440) return "12:00 AM";
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:52: // AC1: 0 <= start < end <= 1440, and start must be strictly after now
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:56: if (end > 1440) {
+C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts:57: errors.push("End time cannot exceed 1440 (end of day).");
+=== supabase ===
+=== line counts ===
+  340  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\RoomChecker.tsx
+  135  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\components\Timeline.tsx
+  100  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\lib\availability.ts
+   11  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\App.tsx
+   10  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\main.tsx
+    1  C:\Users\erbol\OneDrive - АО Казахстанско-Британский Технический Университет\Жұмыс үстелі\New folder\A4_Software_Engineering\src\vite-env.d.ts
