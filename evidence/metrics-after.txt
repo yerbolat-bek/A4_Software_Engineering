@@ -1,0 +1,23 @@
+﻿=== LINE COUNTS (now) ===
+   85  src\components\ResultPanel.tsx
+  286  src\components\RoomChecker.tsx
+   60  src\components\RoomFilters.tsx
+   87  src\components\RoomSelector.tsx
+   53  src\components\TimeInput.tsx
+  136  src\components\Timeline.tsx
+  102  src\lib\availability.ts
+    3  src\lib\constants.ts
+   26  src\lib\filterRooms.ts
+   82  src\lib\rooms.ts
+   11  src\App.tsx
+   10  src\main.tsx
+    1  src\vite-env.d.ts
+=== LITERALS 120/1440 outside constants.ts ===
+=== DUPLICATE setResult(null) ===
+src\components\RoomChecker.tsx:58: setResult(null);
+src\components\RoomChecker.tsx:64: setResult(null);
+src\components\RoomChecker.tsx:69: setResult(null);
+src\components\RoomChecker.tsx:73: setResult(null);
+src\components\RoomChecker.tsx:77: setResult(null);
+src\components\RoomChecker.tsx:81: setResult(null);
+src\components\RoomChecker.tsx:92: setResult(null);
