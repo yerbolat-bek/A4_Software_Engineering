@@ -16,6 +16,7 @@ import {
   formatDuration,
 } from "@/lib/availability";
 import Timeline from "@/components/Timeline";
+import { MINUTES_PER_DAY, MAX_BOOKING_MINUTES } from "@/lib/constants";
 
 const ROOM_DATA: AvailabilityData = {
   now: 540,
@@ -171,7 +172,7 @@ export default function RoomChecker() {
                 id="start-time"
                 type="number"
                 min={0}
-                max={1440}
+                max={MINUTES_PER_DAY}
                 value={startInput}
                 onChange={(e) => {
                   setStartInput(e.target.value);
@@ -180,7 +181,7 @@ export default function RoomChecker() {
                 className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-slate-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 placeholder="e.g. 540"
               />
-              {startValid && startNum >= 0 && startNum <= 1440 && (
+              {startValid && startNum >= 0 && startNum <= MINUTES_PER_DAY && (
                 <p className="text-xs text-slate-500 mt-1.5">
                   ={" "}
                   <span className="font-medium text-slate-600">
@@ -204,7 +205,7 @@ export default function RoomChecker() {
                 id="end-time"
                 type="number"
                 min={0}
-                max={1440}
+                max={MINUTES_PER_DAY}
                 value={endInput}
                 onChange={(e) => {
                   setEndInput(e.target.value);
@@ -213,7 +214,7 @@ export default function RoomChecker() {
                 className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-slate-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 placeholder="e.g. 600"
               />
-              {endValid && endNum >= 0 && endNum <= 1440 && (
+              {endValid && endNum >= 0 && endNum <= MINUTES_PER_DAY && (
                 <p className="text-xs text-slate-500 mt-1.5">
                   ={" "}
                   <span className="font-medium text-slate-600">
@@ -230,11 +231,11 @@ export default function RoomChecker() {
               <span className="text-sm text-slate-500">Requested Duration</span>
               <span
                 className={`text-sm font-semibold ${
-                  duration > 120 ? "text-rose-600" : "text-slate-700"
+                  duration > MAX_BOOKING_MINUTES ? "text-rose-600" : "text-slate-700"
                 }`}
               >
                 {formatDuration(duration)}
-                {duration > 120 && " (exceeds 120 min max)"}
+                {duration > MAX_BOOKING_MINUTES && ` (exceeds ${MAX_BOOKING_MINUTES} min max)`}
               </span>
             </div>
           )}
@@ -329,7 +330,7 @@ export default function RoomChecker() {
               12:00 PM, 1020 = 5:00 PM.
             </p>
             <p>
-              Max booking duration: 120 minutes. This tool only checks
+              Max booking duration: {MAX_BOOKING_MINUTES} minutes. This tool only checks
               availability &mdash; it does not create or confirm bookings.
             </p>
           </div>

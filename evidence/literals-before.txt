@@ -1,0 +1,17 @@
+﻿src\components\RoomChecker.tsx:174: max={1440}
+src\components\RoomChecker.tsx:183: {startValid && startNum >= 0 && startNum <= 1440 && (
+src\components\RoomChecker.tsx:207: max={1440}
+src\components\RoomChecker.tsx:216: {endValid && endNum >= 0 && endNum <= 1440 && (
+src\components\RoomChecker.tsx:233: duration > 120 ? "text-rose-600" : "text-slate-700"
+src\components\RoomChecker.tsx:237: {duration > 120 && " (exceeds 120 min max)"}
+src\components\RoomChecker.tsx:332: Max booking duration: 120 minutes. This tool only checks
+src\components\Timeline.tsx:13: const HOUR_MARKS_WIDE = [0, 360, 720, 1080, 1440];
+src\components\Timeline.tsx:29: const toPercent = (minutes: number) => (minutes / 1440) * 100;
+src\components\Timeline.tsx:37: proposedEnd <= 1440 &&
+src\lib\availability.ts:18: if (minutes === 1440) return "12:00 AM";
+src\lib\availability.ts:56: if (end > 1440) {
+src\lib\availability.ts:57: errors.push("End time cannot exceed 1440 (end of day).");
+src\lib\availability.ts:69: if (end - start > 120) {
+src\lib\availability.ts:71: "Booking duration cannot exceed 120 minutes. Please choose a shorter time range."
+src\lib\constants.ts:1: export const MINUTES_PER_DAY = 1440;
+src\lib\constants.ts:2: export const MAX_BOOKING_MINUTES = 120;

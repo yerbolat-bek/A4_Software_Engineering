@@ -1,0 +1,2 @@
+﻿src\lib\constants.ts:1: export const MINUTES_PER_DAY = 1440;
+src\lib\constants.ts:2: export const MAX_BOOKING_MINUTES = 120;

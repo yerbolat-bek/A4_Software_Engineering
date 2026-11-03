@@ -1,4 +1,5 @@
 import { Booking, formatTime } from "@/lib/availability";
+import { MINUTES_PER_DAY } from "@/lib/constants";
 
 interface TimelineProps {
   now: number;
@@ -10,7 +11,7 @@ interface TimelineProps {
 
 // Fewer labels on narrow screens so they don't overlap or clip
 const HOUR_MARKS_NARROW = [360, 720, 1080];
-const HOUR_MARKS_WIDE = [0, 360, 720, 1080, 1440];
+const HOUR_MARKS_WIDE = [0, 360, 720, 1080, MINUTES_PER_DAY];
 const TICK_MARKS = Array.from({ length: 25 }, (_, i) => i * 60);
 
 const colorClasses: Record<TimelineProps["proposedColor"], string> = {
@@ -26,7 +27,7 @@ export default function Timeline({
   proposedEnd,
   proposedColor,
 }: TimelineProps) {
-  const toPercent = (minutes: number) => (minutes / 1440) * 100;
+  const toPercent = (minutes: number) => (minutes / MINUTES_PER_DAY) * 100;
 
   const showProposed =
     proposedStart !== null &&
@@ -34,7 +35,7 @@ export default function Timeline({
     !Number.isNaN(proposedStart) &&
     !Number.isNaN(proposedEnd) &&
     proposedStart >= 0 &&
-    proposedEnd <= 1440 &&
+    proposedEnd <= MINUTES_PER_DAY &&
     proposedStart < proposedEnd;
 
   return (

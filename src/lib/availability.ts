@@ -1,3 +1,5 @@
+import { MINUTES_PER_DAY, MAX_BOOKING_MINUTES } from "./constants";
+
 export interface Booking {
   start: number;
   end: number;
@@ -15,7 +17,7 @@ export type AvailabilityResult =
   | { status: "invalid"; errors: string[] };
 
 export function formatTime(minutes: number): string {
-  if (minutes === 1440) return "12:00 AM";
+  if (minutes === MINUTES_PER_DAY) return "12:00 AM";
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   const period = h < 12 ? "AM" : "PM";
@@ -49,12 +51,12 @@ export function checkAvailability(
     return { status: "invalid", errors };
   }
 
-  // AC1: 0 <= start < end <= 1440, and start must be strictly after now
+  // AC1: 0 <= start < end <= MINUTES_PER_DAY, and start must be strictly after now
   if (start < 0) {
     errors.push("Start time cannot be earlier than 0 (midnight).");
   }
-  if (end > 1440) {
-    errors.push("End time cannot exceed 1440 (end of day).");
+  if (end > MINUTES_PER_DAY) {
+    errors.push(`End time cannot exceed ${MINUTES_PER_DAY} (end of day).`);
   }
   if (start >= end) {
     errors.push("Start time must be earlier than end time.");
@@ -65,10 +67,10 @@ export function checkAvailability(
     );
   }
 
-  // AC2: Duration must not exceed 120 minutes (exactly 120 is allowed)
-  if (end - start > 120) {
+  // AC2: Duration must not exceed MAX_BOOKING_MINUTES (exactly the maximum is allowed)
+  if (end - start > MAX_BOOKING_MINUTES) {
     errors.push(
-      "Booking duration cannot exceed 120 minutes. Please choose a shorter time range."
+      `Booking duration cannot exceed ${MAX_BOOKING_MINUTES} minutes. Please choose a shorter time range.`
     );
   }
 
@@ -95,6 +97,6 @@ export function checkAvailability(
     }
   }
 
-  // AC5: Available
+  // Original code labelled this "AC5: Available"; here it is the success path
   return { status: "available" };
 }
